@@ -1,0 +1,27 @@
+<div id="Editplan" class="example-container">
+    <mat-toolbar-row >
+      <h1 style="color:#f44236;"><b>Edit Addon</b></h1>
+      </mat-toolbar-row>
+      <form #editForm="ngForm" ngFor="let editAddon of addon" [formGroup]="editAddonData">
+        
+    
+        <mat-form-field appearance="outline">
+            <mat-label>Enter Addon name</mat-label>
+            <input matInput placeholder="Enter Addon name" id="editAddonName" formControlName="addonName" required>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+          <mat-label>Enter Image Url</mat-label>
+            <input matInput placeholder="Enter Image Url" id="editImageUrl" formControlName="imageUrl" required>
+          </mat-form-field>
+        
+          <mat-form-field appearance="outline">
+            <mat-label>Enter the Addon price</mat-label>
+            <input matInput placeholder="Enter the addon price" type="number" id="editAddonPrice" formControlName="addonPrice" required>
+          </mat-form-field>
+      </form>
+    
+      <div mat-dialog-action [align]="'end'">
+          <button class="save-btn" id="updateAddon" mat-raised-button color="warn" [disabled]="editForm.invalid" routerLink="/addon" (click)=OnUpdateAddon()>Update Plan</button>
+      </div>
+    </div>

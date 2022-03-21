@@ -1,0 +1,29 @@
+<div id="Addplan" class="example-container">
+    <mat-toolbar-row >
+      <h1 style="color:#f44236;"><b>Add addon</b></h1>
+      </mat-toolbar-row>
+    <form #addForm="ngForm">
+      
+  
+      <mat-form-field appearance="outline">
+          <mat-label>Enter Addon name</mat-label>
+          <input matInput placeholder="Enter Addon name" id="planName" ngModel name="addonName" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Enter Image Url</mat-label>
+            <input matInput placeholder="Enter Image Url " id="imageUrl" ngModel name="imageUrl" required>
+          </mat-form-field>
+      
+        <mat-form-field appearance="outline">
+          <mat-label>Enter the addon price</mat-label>
+          <input matInput placeholder="Enter the addon price" type="number" id="addonPrice" ngModel name="addonPrice" required>
+        </mat-form-field>
+      
+        
+    </form>
+  
+    <div mat-dialog-action [align]="'end'">
+        <button class="save-btn" id="addAddon" [disabled]="addForm.invalid" mat-raised-button color="warn" (click)="OnAddaddon(addForm)">Add Plan</button>
+    </div>
+  </div>
